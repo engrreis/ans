@@ -1,0 +1,231 @@
+/* =========================================================
+   login_modal.css — Modal de Login | Portal ANS (REFATORADO)
+   - Campo senha compacto + botão "Entrar" à direita
+   - Sem sombra nos botões
+   - Visual alinhado ao cadastro/home (cinza frio)
+   ========================================================= */
+
+/* Container do modal */
+.ans-modal--login{
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: none;
+}
+
+.ans-modal--login.is-open{
+  display: block;
+}
+
+/* Backdrop */
+.ans-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+/* Painel */
+.ans-modal__panel{
+  position: relative;
+  max-width: 420px;
+  margin: 10vh auto 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(43,59,65,0.96);      /* #2B3B41 */
+  box-shadow: 0 24px 80px rgba(0,0,0,0.60);
+  overflow: hidden;
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+.ans-modal__header{
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid rgba(200,169,77,0.18);
+  background: rgba(36,52,58,0.98);      /* #24343A */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ans-modal__title{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f2f0ea;
+}
+
+.ans-modal__sub{
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: rgba(242,240,234,0.72);
+  line-height: 1.4;
+}
+
+/* Botão fechar */
+.ans-modal__close{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: #f2f0ea;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.ans-modal__close:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+/* Corpo / Form */
+.ans-modal__body{
+  padding: 16px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Campos */
+.ans-modal__body .ans-field label{
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: rgba(242,240,234,0.78);
+}
+
+.ans-modal__body .ans-field input{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: #f2f0ea;
+  padding: 12px 13px;
+  font-size: 15.5px;
+}
+
+.ans-modal__body .ans-field input:focus{
+  outline: none;
+  border-color: rgba(200,169,77,0.60);
+  box-shadow: 0 0 0 3px rgba(200,169,77,0.12);
+}
+
+/* Campo senha mais compacto */
+#login_senha{
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* Alert de erro */
+#loginError{
+  margin-top: 6px;
+}
+
+/* ===== Linha Senha + Entrar ===== */
+.ans-login-row{
+  display: grid;
+  grid-template-columns: 1fr 132px; /* senha + botão */
+  gap: 12px;
+  align-items: end;
+}
+
+.ans-field--senha{
+  min-width: 0; /* evita overflow em grid */
+}
+
+/* ===== Rodapé ===== */
+.ans-modal__footer{
+  padding: 12px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== BOTÕES (sem sombra) ===== */
+.ans-btn{
+  border-radius: 14px;
+  padding: 11px 14px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Botão principal – "Entrar" (sem box-shadow) */
+.ans-btn--primary{
+  background: linear-gradient(135deg, #c8a94d, #b8963d);
+  color: #1e1e1e;
+  border: none;
+  box-shadow: none; /* sem sombra */
+}
+
+.ans-btn--primary:hover{
+  filter: brightness(1.04);
+}
+
+/* botão "Entrar" na linha: altura compatível com input */
+.ans-btn--enter{
+  width: 132px;
+  padding: 11px 12px;
+}
+
+/* Botão secundário – cadastro */
+.ans-btn--secondary{
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #c8a94d;
+  border: 1px solid rgba(200,169,77,0.55);
+  background: transparent;
+  text-decoration: none;
+  box-shadow: none; /* sem sombra */
+}
+
+.ans-btn--secondary:hover{
+  background: rgba(200,169,77,0.08);
+}
+
+/* Link auxiliar */
+.ans-link{
+  font-size: 13.5px;
+  text-align: center;
+  color: rgba(242,240,234,0.78);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(200,169,77,0.45);
+  align-self: center;
+}
+
+.ans-link:hover{
+  color: #f2f0ea;
+  border-bottom-color: rgba(200,169,77,0.78);
+}
+
+.ans-link--muted{
+  color: rgba(242,240,234,0.55);
+  border-bottom: none;
+}
+
+.ans-link--muted:hover{
+  color: rgba(242,240,234,0.80);
+}
+
+/* Responsivo */
+@media (max-width: 520px){
+  .ans-modal__panel{
+    margin: 8vh 12px 0;
+  }
+
+  .ans-login-row{
+    grid-template-columns: 1fr; /* empilha */
+  }
+
+  .ans-btn--enter{
+    width: 100%;
+  }
+}

@@ -1,0 +1,349 @@
+/* ============================================================
+   home.css (BASE do site: Home + páginas internas)
+   - Hero com vídeo + fallback
+   - Layout (main/container/grid/cards)
+   - Variações por página (ex.: Quem Somos)
+   ============================================================ */
+
+:root{
+  --bg-dark: #2B3B41;
+  --bg-dark-2: #24343A;
+  --card-bg: #F4F5F7;
+
+  --text-light: #FFFFFF;
+  --text-muted: rgba(255,255,255,0.78);
+  --text-dark: #161616;
+
+  --accent: #2B3B41;
+  --accent-hover:#223036;
+
+  --border-light: rgba(255,255,255,0.14);
+  --border-dark: rgba(0,0,0,0.08);
+
+  --header-offset: 110px; /* ajuste fino do header fixo/flutuante */
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  color: var(--text-dark);
+  background: #fff;
+}
+
+/* ============================================================
+   HERO (Home)
+   ============================================================ */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  overflow: hidden;
+  background: var(--bg-dark-2);
+}
+
+/* fallback sempre presente */
+.hero-media{
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/Hero1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* vídeo por cima */
+.hero-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* visual neutro */
+  filter: grayscale(100%) brightness(0.70) contrast(0.80);
+}
+
+/* overlay */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(43,59,65,0.45) 0%,
+    rgba(43,59,65,0.35) 55%,
+    rgba(43,59,65,0.50) 100%
+  );
+}
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: var(--header-offset);
+}
+
+.hero-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 16px 52px;
+}
+
+.hero h1{
+  color: #C8A94D;
+  font-size: 44px;
+  line-height: 1.08;
+  margin: 0 0 14px;
+  letter-spacing: .2px;
+}
+
+.hero-sub{
+  color: var(--text-muted);
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0 0 22px;
+}
+
+.hero-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+
+  border: 1px solid transparent;
+  transition: transform .12s ease, background .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn-primary{
+  background: rgba(244,245,247,0.94);
+  color: #131313;
+  border-color: rgba(255,255,255,0.10);
+}
+
+.btn-primary:hover{
+  background: rgba(244,245,247,1);
+}
+
+.btn-outline{
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border-color: rgba(255,255,255,0.22);
+}
+
+.btn-outline:hover{
+  border-color: rgba(255,255,255,0.34);
+}
+
+.hero-note{
+  color: rgba(255,255,255,0.70);
+  font-size: 16px;
+}
+
+/* ============================================================
+   LAYOUT BASE (todas as páginas internas)
+   Use: <main class="main"> ... ou <main class="main main--xxx">
+   ============================================================ */
+.main{
+  background: transparent;
+  padding: 34px 0 52px;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.card{
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.card p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #2b2b2b;
+  line-height: 1.55;
+}
+
+.card p:last-child{
+  margin-bottom: 0;
+}
+
+.card-link{
+  color: #2A4A3A;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.card-link:hover{
+  text-decoration: underline;
+}
+
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.banner h2{
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.banner p{
+  margin: 0;
+  color: #3a3a3a;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* Tipografia básica nas páginas internas */
+.main h1{
+  margin: 0 0 12px;
+}
+
+.main h2{
+  margin: 26px 0 12px;
+}
+
+.main p{
+  margin: 0 0 14px;
+  line-height: 1.65;
+  color: #2b2b2b;
+}
+/* ============================================================
+   VARIAÇÕES POR PÁGINA
+   ============================================================ */
+
+/* Quem Somos: background + overlay escuro + compensação do header */
+.main--quem-somos{
+  position: relative;
+
+  background-image: url("../img/bg-realizacoes.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+
+  min-height: calc(100vh - var(--header-offset));
+  padding-top: calc(var(--header-offset) + 18px);
+  padding-bottom: 48px;
+}
+
+/* Overlay escuro (efeito tipo hero da Home) */
+.main--quem-somos::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(43,59,65,0.55) 0%,
+    rgba(43,59,65,0.40) 60%,
+    rgba(43,59,65,0.55) 100%
+  );
+  z-index: 0;
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.main--quem-somos > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Melhor leitura sobre imagem */
+.main--quem-somos .card,
+.main--quem-somos .banner{
+  background: rgba(244,245,247,0.96);
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 920px){
+  :root{
+    --header-offset: 96px;
+  }
+
+  .hero h1{ font-size: 34px; }
+  .grid{ grid-template-columns: 1fr; }
+  .banner{ flex-direction: column; align-items: flex-start; }
+  .iniciativa-wrap{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.iniciativa-foto img{
+  width: 90px;
+  height: 90px;
+}
+
+}
+/* Card A Iniciativa */
+.card-iniciativa{
+  padding: 22px;
+}
+
+.iniciativa-wrap{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.iniciativa-foto img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(43,59,65,0.25);
+  background: #fff;
+}
+
+.iniciativa-texto h3{
+  margin-top: 0;
+}
+
+.link-linkedin{
+  color: #0A66C2;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link-linkedin:hover{
+  text-decoration: underline;
+}

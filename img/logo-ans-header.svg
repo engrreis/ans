@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ANS">
+
+  <!-- Balão de fala -->
+  <g transform="translate(0,10)">
+    <path d="M16 4H68C75.732 4 82 10.268 82 18V38C82 45.732 75.732 52 68 52H42L30 60V52H16C8.268 52 2 45.732 2 38V18C2 10.268 8.268 4 16 4Z"
+          stroke="#F3F0E8" stroke-width="2.8" stroke-linejoin="round"/>
+
+    <!-- ANS centralizado -->
+    <text x="42" y="31"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="26"
+          font-weight="700"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          fill="#F3F0E8">
+          A<tspan fill="#C8A94D">NS</tspan>
+    </text>
+  </g>
+
+  <!-- Texto ao lado -->
+  <g transform="translate(100,25)">
+    <text x="0" y="0"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="18"
+          font-weight="600"
+          fill="#F3F0E8">Acionistas</text>
+
+    <text x="0" y="30"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="30"
+          font-weight="700"
+          fill="#C8A94D">Nova Smar</text>
+  </g>
+
+</svg>
