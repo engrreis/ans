@@ -79,8 +79,7 @@ require_once __DIR__ . '/../include/header.php';
           <h3>A Iniciativa</h3>
         <p>
           A iniciativa por trás deste portal é conduzida por
-          <a href="https://www.linkedin.com/in/ricardoreis/" target="_blank" rel="noopener noreferrer" class="link-linkedin">
-            Ricardo Reis Ricci
+            Ricardo
           </a>,
           economista, engenheiro eletricista e especialista em
           <strong>modelagem de dados aplicada à área de risco em asset management</strong>,
